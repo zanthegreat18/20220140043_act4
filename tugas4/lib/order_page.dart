@@ -26,11 +26,11 @@ class _OrderPageState extends State<OrderPage> {
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(title: Text('Order Page')),
       body: Form(
-        key: _formKey,
+        key: formKey,
         child: Column(
           spacing: 16,
           children: [
@@ -76,7 +76,7 @@ class _OrderPageState extends State<OrderPage> {
             ),
              ElevatedButton(
               onPressed: () {
-                if (_formKey.currentState!.validate()) {
+                if (formKey.currentState!.validate()) {
                   calculateTotalPrice();
                   Navigator.push(
                     context,
